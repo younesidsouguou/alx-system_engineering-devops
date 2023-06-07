@@ -1,10 +1,2 @@
 #!/bin/bash
-
-source_dir=$(pwd)
-target_dir=$(dirname "$source_dir")  # Parent directory
-
-# Copy HTML files from source to target directory
-for file in ./*.html; do
-  filename=$(basename "$file")
-  cp "$file" "$target_dir/$filename"
-done
+rsync -u --ignore-existing --include='*.html' --exclude='*' . ../
