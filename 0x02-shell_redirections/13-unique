@@ -1,2 +1,2 @@
 #!/bin/bash
-cat list | sort | uniq -c | grep 1 | cut -d " " -f 8
+sort | uniq -u
